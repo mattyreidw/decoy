@@ -8,7 +8,7 @@ export default function Home() {
         alt="Decoy logo"
         className=""
         width={300}
-        height={80}
+        height={108}
         priority
       />
     </main>
