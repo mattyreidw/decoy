@@ -1,14 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --background-color: #161616;
+  --night: #161616;
+  --midnight-green: #005454;
+  --thistle: #E9D2F4;
+  --tea-green: #D0F1BF;
 }
 
 
 body {
-  background-color: var(--background-color);
+  background-color: var(--night);
   width: 100vw;
   height: 100vh;
   margin: 0;
