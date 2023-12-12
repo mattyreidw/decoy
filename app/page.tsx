@@ -8,7 +8,7 @@ export default function Home() {
   const ref = useRef(null);
   const [position, setPosition] = useState({x:0,y:0});
 
-  const handleMouse = (e) => {
+  const handleMouse = (e: { clientX: any; clientY: any; }) => {
   const { clientX, clientY } = e;
   const {height, width, left, top} = ref.current.getBoundingClientRect();
   const middleX = clientX - (left + width/2)
