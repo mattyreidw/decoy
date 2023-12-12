@@ -1,36 +1,15 @@
 'use client';
 import Image from 'next/image'
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
 
 export default function Home() {
-
-  const ref = useRef(null);
-  const [position, setPosition] = useState({x:0,y:0});
-
-  const handleMouse = (e: { clientX: any; clientY: any; }) => {
-  const { clientX, clientY } = e;
-  const {height, width, left, top} = ref.current.getBoundingClientRect();
-  const middleX = clientX - (left + width/2)
-  const middleY = clientY - (top + height/2)
-  setPosition({x: middleX, y: middleY})
-}
-
-const reset = () => {
-    setPosition({x:0, y:0})
-}
-
-const { x, y } = position;
-
   return (
     <main>
       <motion.div
-        style={{position: "relative"}}
-        ref={ref}
-        onMouseMove={handleMouse}
-        onMouseLeave={reset}
-        animate={{x, y}}
-        transition={{type: "spring", stiffness: 150, damping: 15, mass: 0.1}}
+        drag
+        dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+        dragElastic={0.7}
+        dragTransition={{ bounceStiffness: 100, bounceDamping: 10 }}
       >
         <motion.svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 406.15 144.86" width="300">
           <motion.path fill="#D0F1BF" d="m99.07,88.97c.57,4.98-.88,9.99-4.02,13.89-4.17,6-7.68,12.48-13.17,17.48-1.1,1.23-2.4,2.26-3.84,3.05-6.24,2.65-12.77,4.55-19.46,5.66-3.33.57-6.7-.72-8.81-3.36-3.38-3.62-5.98-7.9-7.63-12.57-2.15-7.39-5.68-14.31-10.39-20.4-2.35-2.88-3.37-6.85-4.97-10.34-7.32-15.97-14.62-31.94-21.92-47.91-1.44-3.16-2.98-6.3-4.15-9.56-2.19-6.15.98-10.48,7.14-8.87,11.37,2.98,23.04.93,34.44,2.92,6.66,1.16,13.79.69,20.07,2.82,11.7,3.97,22.75,9.41,27.43,22.45,2.35,6.55,4.73,13.09,6.71,19.75,2.43,8.15,1.3,16.72,2.6,25Zm-11.03-12.76c.04-2.49-.36-4.96-1.18-7.31-1.35-4-2.99-7.89-4.91-11.64-5.51-11.66-16.4-19.88-29.14-21.96-5.61-.91-11.14-2.2-16.57-3.88-2.77-1.03-5.71-1.5-8.66-1.37-4.25.26-5.89,2.06-5.82,6.28.23,2.38.97,4.68,2.18,6.74,3.74,7.96,8.05,15.71,11.03,23.95,4.41,12.17,10.81,23.23,17.15,34.37.72,1.28,1.6,2.46,2.62,3.51,2.72,3.29,7.53,3.86,10.94,1.3,2.44-1.64,4.49-3.82,5.97-6.36,2.91-4.9,6.84-9.11,11.52-12.35,3.97-2.49,5.04-6.56,4.87-11.26Z"/>
