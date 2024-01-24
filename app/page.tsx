@@ -18,5 +18,5 @@ export default function Home() {
         <p>Decoy draws its name from the meticulously crafted wooden decoys that you find in  grandpa’s garage. While our products are tailored to resonate with our clients' needs, Decoy is more than a representation—it's the real deal.</p>
       </section>
     </main>
-  );
+  )
 }
