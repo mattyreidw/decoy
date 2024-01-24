@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className={styles.whoweare}>
         <h2 className={headingFont.className}>Who We Are</h2>
-        <p>Decoy draws its name from the meticulously crafted wooden decoys that you find in  grandpa&apos;s garage. While our products are tailored to resonate with our clients&apos; needs&comma; Decoy is more than a representation—it's the real deal.</p>
+        <p>Decoy draws its name from the meticulously crafted wooden decoys that you find in  grandpa&apos;s garage. While our products are tailored to resonate with our clients&apos; needs&#x2C; Decoy is more than a representation—it's the real deal.</p>
       </section>
     </main>
   )
