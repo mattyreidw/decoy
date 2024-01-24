@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import localFont from 'next/font/local'
+
+const mainFont = localFont({
+  src: './fonts/ABCRepro-Regular.woff2',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'Decoy',
@@ -14,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={mainFont.className}>
       <body>
         {children}
         <Analytics />
